@@ -1,0 +1,28 @@
+project:
+  name: "code_retrieval"  # This will be used as base name for all files
+
+# Search parameters
+search:
+  title_keywords:
+    - ["code", "program"] # terms within list = OR
+    - ["search", 'retrieval'] # seperate terms = AND
+  abstract_keywords:
+  categories: ["cs.AI", "cs.CL", "cs.SE"]
+  date_range:
+    start: "2021-01-01"
+    end: "2024-12-06"
+  max_results: 999
+
+# API configuration
+api:
+  anthropic_key: "" 
+
+# Output paths
+paths:
+  base_dir: "data"  # All output will be in this directory
+  papers_dir: "papers"  # Will be created under base_dir
+
+# Processing settings
+settings:
+  delay_between_requests: 1  # seconds
+  max_words_for_summary: 3000

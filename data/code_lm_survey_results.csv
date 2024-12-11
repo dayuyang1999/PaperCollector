@@ -1,0 +1,193 @@
+title,keywords,release_date,overall_summary,structure,methodology,example,abstract,arxiv
+A Survey on Evaluating Large Language Models in Code Generation Tasks,"code generation evaluation, similarity metrics, execution-based metrics, compilation success rate, unit test pass rate",2024-08,"This paper provides a comprehensive review of methods and metrics for evaluating the performance of large language models in code generation tasks. It analyzes different approaches, including similarity-based, execution-based, and feedback-based evaluation, while also discussing benchmark datasets and future challenges.",1. Introduction 2. Code Generation Evaluation Metrics 2.1 Evaluation Based on Similarity 2.1.1 Traditional Similarity Metrics 2.1.2 Code-Specific Similarity Metrics 2.2 Execution-Based Evaluation 2.2.1 Compilation/Interpretation Success Rate 2.2.2 Unit Test Pass Rate 2.2.3 Other Execution Metrics 3. Benchmark Datasets and Metrics 4. Future Challenges and Opportunities,"- Similarity-based metrics (BLEU, ROUGE, METEOR, Exact Match, Edit Distance) - Code-specific similarity metrics (CodeBLEU, data flow analysis, semantic similarity) - Compilation/interpretation success rate - Unit test pass rate - Other execution metrics (time to solve, code complexity, resource usage)","The CodeBLEU metric combines n-gram matching from BLEU with syntactic AST matching and semantic data flow matching. It analyzes the AST structures of generated and reference code to ensure not only textual similarity but also structural and logical similarity, providing a more comprehensive evaluation of code generation quality.","This paper provides a comprehensive review of the current methods and metrics
+used to evaluate the performance of Large Language Models (LLMs) in code
+generation tasks. With the rapid growth in demand for automated software
+development, LLMs have demonstrated significant potential in the field of code
+generation. The paper begins by reviewing the historical development of LLMs
+and their applications in code generation. Next, it details various methods and
+metrics for assessing the code generation capabilities of LLMs, including code
+correctness, efficiency, readability, and evaluation methods based on expert
+review and user experience. The paper also evaluates the widely used benchmark
+datasets, identifying their limitations and proposing directions for future
+improvements. Specifically, the paper analyzes the performance of code
+generation models across different tasks by combining multiple evaluation
+metrics, such as code compilation/interpretation success rates, unit test pass
+rates, and performance and efficiency metrics, to comprehensively assess the
+practical application of LLMs in code generation. Finally, the paper discusses
+the challenges faced in evaluating LLMs in code generation, particularly how to
+ensure the comprehensiveness and accuracy of evaluation methods and how to
+adapt to the evolving practices of software development. These analyses and
+discussions provide valuable insights for further optimizing and improving the
+application of LLMs in code generation tasks.",http://arxiv.org/abs/2408.16498v1
+A Survey on Large Language Models for Code Generation,"code generation, natural language to code, large language model evaluation, code LLM data curation, instruction tuning for code LLMs",2024-06,"This paper provides a comprehensive survey of the latest advancements in using large language models (LLMs) for code generation, which involves generating source code from natural language descriptions. It introduces a taxonomy to categorize recent developments, covering data curation, advanced techniques, evaluation methods, and practical applications of code generation with LLMs.","1. Introduction 2. Background on LLMs and code LLMs 3. Methodology for literature review 4. Taxonomy of LLMs for code generation 5. Detailed analysis within the taxonomy 5.1 Data curation 5.2 Advanced topics (instruction tuning, prompting, retrieval augmentation, etc.) 5.3 Evaluation methods 5.4 Applications 6. Challenges and opportunities 7. Conclusion","['- Transformer architecture with multi-head self-attention and feed-forward layers', '- Encoder-decoder, decoder-only, and encoder-only model variants', '- Techniques like residual connections, layer normalization, positional encoding']","As an example, the paper discusses how the HumanEval benchmark has become a de facto standard for evaluating the coding proficiency of LLMs. It shows the remarkable improvement on this benchmark from early models like PaLM 8B achieving 3.6% Pass@1 to the latest LDB model reaching 95.1% Pass@1.","Large Language Models (LLMs) have garnered remarkable advancements across
+diverse code-related tasks, known as Code LLMs, particularly in code generation
+that generates source code with LLM from natural language descriptions. This
+burgeoning field has captured significant interest from both academic
+researchers and industry professionals due to its practical significance in
+software development, e.g., GitHub Copilot. Despite the active exploration of
+LLMs for a variety of code tasks, either from the perspective of natural
+language processing (NLP) or software engineering (SE) or both, there is a
+noticeable absence of a comprehensive and up-to-date literature review
+dedicated to LLM for code generation. In this survey, we aim to bridge this gap
+by providing a systematic literature review that serves as a valuable reference
+for researchers investigating the cutting-edge progress in LLMs for code
+generation. We introduce a taxonomy to categorize and discuss the recent
+developments in LLMs for code generation, covering aspects such as data
+curation, latest advances, performance evaluation, ethical implications,
+environmental impact, and real-world applications. In addition, we present a
+historical overview of the evolution of LLMs for code generation and offer an
+empirical comparison using the HumanEval, MBPP, and BigCodeBench benchmarks
+across various levels of difficulty and types of programming tasks to highlight
+the progressive enhancements in LLM capabilities for code generation. We
+identify critical challenges and promising opportunities regarding the gap
+between academia and practical development. Furthermore, we have established a
+dedicated resource GitHub page (https://github.com/juyongjiang/CodeLLMSurvey)
+to continuously document and disseminate the most recent advances in the field.",http://arxiv.org/abs/2406.00515v2
+Low-Cost Language Models: Survey and Performance Evaluation on Python Code Generation,"chain-of-thought prompting, low-cost language models, python code generation, cpu-friendly models, semi-manual evaluation",2024-04,"This paper evaluates the performance of low-cost, CPU-friendly language models on the task of Python code generation. It introduces a new dataset of 60 programming problems and employs chain-of-thought prompting to improve model reasoning and code quality.",1. Introduction 2. Related Work 2.1. Python code generation 2.1.1. Closed-source models 2.1.2. Open-source models 2.2. Small Language Models 3. Problem Formulation and Models 4. Datasets 5. Engineered Prompts 6. Evaluation Methodology 7. Results and Discussion 8. Semi-Manual Evaluation 9. Conclusion and Perspectives,"['Propose a new dataset of 60 Python programming problems with varying difficulty levels', 'Introduce a chain-of-thought (CoT) prompting strategy to guide model reasoning', 'Evaluate multiple low-cost, CPU-friendly models on the proposed dataset, HumanEval, and EvalPlus', 'Use a quality-assessment prompt with GPT-3.5-Turbo to semi-manually evaluate model outputs', 'Manually correct mistakes made by GPT-3.5-Turbo in the evaluation']","For the problem 'Write a function that takes a list of integers and returns the sum of all even numbers in the list', with variables 'nums' and options 'None', the model Llama-3.1-8B-Instruct generated the following Python code: def soln(nums): even_sum = 0 for num in nums: if num % 2 == 0: even_sum += num return even_sum This code correctly iterates through the list 'nums', checks if each number is even using the modulus operator, and accumulates the sum of even numbers in the 'even_sum' variable, finally returning the result.","Large Language Models (LLMs) have become a popular choice for many Natural
+Language Processing (NLP) tasks due to their versatility and ability to produce
+high-quality results. Specifically, they are increasingly used for automatic
+code generation to help developers tackle repetitive coding tasks. However,
+LLMs' substantial computational and memory requirements often make them
+inaccessible to users with limited resources. This paper focuses on very
+low-cost models which offer a more accessible alternative to resource-intensive
+LLMs. We notably: (1) propose a thorough semi-manual evaluation of their
+performance in generating Python code, (2) introduce a Chain-of-Thought (CoT)
+prompting strategy to improve model reasoning and code quality, and (3) propose
+a new dataset of 60 programming problems, with varied difficulty levels,
+designed to extend existing benchmarks like HumanEval and EvalPlus. Our
+findings show that some low-cost compatible models achieve competitive results
+compared to larger models like ChatGPT despite using significantly fewer
+resources. We will make our dataset and prompts publicly available to support
+further research.",http://arxiv.org/abs/2404.11160v2
+A Survey of using Large Language Models for Generating Infrastructure as Code,"Infrastructure as Code (IaC) generation, Large Language Model (LLM) for code generation, Ansible YAML generation, Terraform configuration generation, ChatGPT for DevSecOps",2024-03,"This paper surveys the use of large language models (LLMs) for automatically generating Infrastructure as Code (IaC) configurations like Ansible YAML files and Terraform scripts. It discusses the background of IaC, LLMs for code generation, and various approaches that leverage LLMs to assist in IaC creation and analysis for DevSecOps practices.",1. Introduction 2. Background 2.1 Infrastructure as Code (IaC) 2.2 Large Language Models (LLMs) 2.3 LLMs for Code Generation 3. IaC using LLMs: Related Works 3.1 Ansible-YAML Generation by LLMs 3.2 LLMs used in DevSecOps 3.3 IaC Generation through ChatGPT Queries,"['Pre-trained LLMs like CodeGen, Codex, CodeParrot fine-tuned on code datasets', 'Novel prompting techniques to reformulate IaC generation as code completion task', 'Leveraging ChatGPT for static code analysis and runtime log analysis for security', 'Querying ChatGPT to generate IaC configurations like Terraform scripts']","In one approach, the WISDOM-ANSIBLE model is pre-trained on a curated dataset of 1.1M Ansible tasks and 2.2M YAML files. It is then fine-tuned on high-quality Ansible Galaxy data. Given a natural language prompt and partial Ansible context, it can generate the remaining Ansible YAML configuration by treating it as a code completion task.","Infrastructure as Code (IaC) is a revolutionary approach which has gained
+significant prominence in the Industry. IaC manages and provisions IT
+infrastructure using machine-readable code by enabling automation, consistency
+across the environments, reproducibility, version control, error reduction and
+enhancement in scalability. However, IaC orchestration is often a painstaking
+effort which requires specialised skills as well as a lot of manual effort.
+Automation of IaC is a necessity in the present conditions of the Industry and
+in this survey, we study the feasibility of applying Large Language Models
+(LLM) to address this problem. LLMs are large neural network-based models which
+have demonstrated significant language processing abilities and shown to be
+capable of following a range of instructions within a broad scope. Recently,
+they have also been adapted for code understanding and generation tasks
+successfully, which makes them a promising choice for the automatic generation
+of IaC configurations. In this survey, we delve into the details of IaC, usage
+of IaC in different platforms, their challenges, LLMs in terms of
+code-generation aspects and the importance of LLMs in IaC along with our own
+experiments. Finally, we conclude by presenting the challenges in this area and
+highlighting the scope for future research.",http://arxiv.org/abs/2404.00227v1
+"If LLM Is the Wizard, Then Code Is the Wand: A Survey on How Code Empowers Large Language Models to Serve as Intelligent Agents","program-of-thought, code execution environment, intelligent agents, code pre-training, structured reasoning",2024-01,"This survey paper examines how integrating code into the training data of large language models (LLMs) enhances their capabilities as intelligent agents. Code enables LLMs to improve reasoning abilities, generate executable steps, and receive automated feedback through code execution environments.",1) Introduction 2) Preliminaries 3) Code Pre-Training Boosts LLM Performance 4) Connecting LLMs to Functional Ends 5) Executable Environment for Feedback 6) Benefits for Intelligent Agents 7) Challenges and Future Directions,"['Pre-training LLMs on code corpora (e.g. GitHub) in addition to natural language', 'Fine-tuning LLMs on predefined formal languages like function sets or math formulas', ""Leveraging code's properties like logical structure, abstraction, and executability during training""]","The paper cites examples like AlphaCode generating high-quality code across multiple languages, and GPT-3 models like Codex showing dramatic improvements on math reasoning tasks when using 'chain-of-thought' prompting enabled by code pre-training.","The prominent large language models (LLMs) of today differ from past language
+models not only in size, but also in the fact that they are trained on a
+combination of natural language and formal language (code). As a medium between
+humans and computers, code translates high-level goals into executable steps,
+featuring standard syntax, logical consistency, abstraction, and modularity. In
+this survey, we present an overview of the various benefits of integrating code
+into LLMs' training data. Specifically, beyond enhancing LLMs in code
+generation, we observe that these unique properties of code help (i) unlock the
+reasoning ability of LLMs, enabling their applications to a range of more
+complex natural language tasks; (ii) steer LLMs to produce structured and
+precise intermediate steps, which can then be connected to external execution
+ends through function calls; and (iii) take advantage of code compilation and
+execution environment, which also provides diverse feedback for model
+improvement. In addition, we trace how these profound capabilities of LLMs,
+brought by code, have led to their emergence as intelligent agents (IAs) in
+situations where the ability to understand instructions, decompose goals, plan
+and execute actions, and refine from feedback are crucial to their success on
+downstream tasks. Finally, we present several key challenges and future
+directions of empowering LLMs with code.",http://arxiv.org/abs/2401.00812v2
+"A Survey of Large Language Models for Code: Evolution, Benchmarking, and Future Trends","code LLM benchmarking, code LLM performance evaluation, code LLM fine-tuning, code generation models, software vulnerability detection models",2023-11,"This paper provides a comprehensive survey of large language models (LLMs) specifically designed for software engineering tasks, referred to as Code LLMs. It examines the evolution of Code LLMs, benchmarks their performance against general LLMs across various software engineering tasks, and identifies the most proficient models for different tasks.",1. Introduction 2. Methodology 3. LLMs for Software Engineering 3.1 Company-led LLMs 3.2 Organization-led LLMs 3.3 Research Team & Open-Source Community LLMs 3.4 Individual & Anonymous Contributor LLMs 4. Performance Comparison of Code LLMs vs General LLMs 5. Benchmarking Code LLMs Across Software Engineering Tasks 5.1 Code Generation 5.2 Code Summarization 5.3 Code Translation 5.4 Vulnerability Detection 6. Related Work 7. Conclusion,"['Collected relevant literature from GitHub, dblp, Google Scholar, and arXiv', 'Used card sorting method to remove duplicates and irrelevant papers', 'Expanded paper list using snowballing approach', 'Categorized Code LLMs based on affiliations of main developers', 'Analyzed experimental sections comparing Code LLMs and general LLMs', 'Compiled performance of LLMs on software engineering benchmarks']","For the code generation task on the HumanEval benchmark, the CodeFuse-CodeLlama-34B model achieved a pass@1 score of 51.9%, outperforming the GPT-4 model which scored 43.8%. This demonstrates the superior performance of specialized Code LLMs over general LLMs for this specific task.","General large language models (LLMs), represented by ChatGPT, have
+demonstrated significant potential in tasks such as code generation in software
+engineering. This has led to the development of specialized LLMs for software
+engineering, known as Code LLMs. A considerable portion of Code LLMs is derived
+from general LLMs through model fine-tuning. As a result, Code LLMs are often
+updated frequently and their performance can be influenced by the base LLMs.
+However, there is currently a lack of systematic investigation into Code LLMs
+and their performance. In this study, we conduct a comprehensive survey and
+analysis of the types of Code LLMs and their differences in performance
+compared to general LLMs. We aim to address three questions: (1) What LLMs are
+specifically designed for software engineering tasks, and what is the
+relationship between these Code LLMs? (2) Do Code LLMs really outperform
+general LLMs in software engineering tasks? (3) Which LLMs are more proficient
+in different software engineering tasks? To answer these questions, we first
+collect relevant literature and work from five major databases and open-source
+communities, resulting in 134 works for analysis. Next, we categorize the Code
+LLMs based on their publishers and examine their relationships with general
+LLMs and among themselves. Furthermore, we investigate the performance
+differences between general LLMs and Code LLMs in various software engineering
+tasks to demonstrate the impact of base models and Code LLMs. Finally, we
+comprehensively maintained the performance of LLMs across multiple mainstream
+benchmarks to identify the best-performing LLMs for each software engineering
+task. Our research not only assists developers of Code LLMs in choosing base
+models for the development of more advanced LLMs but also provides insights for
+practitioners to better understand key improvement directions for Code LLMs.",http://arxiv.org/abs/2311.10372v2
+Unifying the Perspectives of NLP and Software Engineering: A Survey on Language Models for Code,"code language models, program synthesis, software engineering tasks, transformer models, code processing",2023-11,"This paper provides a comprehensive survey of the application of large language models to various software engineering tasks, covering over 70 models, 40 tasks, 180 datasets, and 900 related works. It highlights the integration of natural language processing and software engineering perspectives.",1. Introduction 2. Downstream SE Tasks 3. Language Modeling Preliminaries 4. Large Language Models for Code 5. Specialized Code Models 6. Code-Specific Features 7. LLMs for Full Software Development 8. Challenges and Conclusion,"['Analyzes general large language models (GPT, LaMDA, PaLM, etc.) adapted for code tasks', 'Reviews specialized code models with tailored pretraining objectives and architectures', 'Discusses integration of code-specific features like abstract syntax trees and data flow', 'Covers application of LLMs across the full software development lifecycle']",The paper discusses how models like Codex and InCoder achieve impressive performance on the HumanEval program synthesis benchmark by scaling up and pretraining on a large corpus of code from GitHub.,"In this work we systematically review the recent advancements in software
+engineering with language models, covering 70+ models, 40+ evaluation tasks,
+180+ datasets, and 900 related works. Unlike previous works, we integrate
+software engineering (SE) with natural language processing (NLP) by discussing
+the perspectives of both sides: SE applies language models for development
+automation, while NLP adopts SE tasks for language model evaluation. We break
+down code processing models into general language models represented by the GPT
+family and specialized models that are specifically pretrained on code, often
+with tailored objectives. We discuss the relations and differences between
+these models, and highlight the historical transition of code modeling from
+statistical models and RNNs to pretrained Transformers and LLMs, which is
+exactly the same course that had been taken by NLP. We also go beyond
+programming and review LLMs' application in other software engineering
+activities including requirement engineering, testing, deployment, and
+operations in an endeavor to provide a global view of NLP in SE, and identify
+key challenges and potential future directions in this domain. We keep the
+survey open and updated on GitHub at
+https://github.com/codefuse-ai/Awesome-Code-LLM.",http://arxiv.org/abs/2311.07989v7
+Pitfalls in Language Models for Code Intelligence: A Taxonomy and Survey,"data noise, label errors, unbalanced data distribution, vulnerability detection, code summarization",2023-10,"The paper systematically reviews pitfalls in language models for code intelligence (LM4Code) across different stages of the model lifecycle. It identifies major pitfalls related to data issues like noise, label errors, and unbalanced distributions that can significantly impact model performance.",1. Introduction 2. Study Design 3. Data Collection and Labeling Pitfalls 4. System Design and Learning Pitfalls 5. Performance Evaluation Pitfalls 6. Deployment and Maintenance Pitfalls 7. Open Challenges and Future Directions,"[""Conducted a systematic literature review following Kitchenham's guidelines"", 'Performed searches on major academic databases and snowballing', 'Identified 67 primary studies on pitfalls in LM4Code after applying inclusion/exclusion criteria', 'Qualitatively analyzed pitfalls and categorized them into 4 aspects: data, model design/learning, evaluation, deployment']","For code summarization, Shi et al. found that 31-66% of data in popular benchmark datasets contained noise like empty methods or duplicated code. Filtering this noise improved BLEU-4 metric by 21-27% when training LMs like CodeBERT.","Modern language models (LMs) have been successfully employed in source code
+generation and understanding, leading to a significant increase in research
+focused on learning-based code intelligence, such as automated bug repair, and
+test case generation. Despite their great potential, language models for code
+intelligence (LM4Code) are susceptible to potential pitfalls, which hinder
+realistic performance and further impact their reliability and applicability in
+real-world deployment. Such challenges drive the need for a comprehensive
+understanding - not just identifying these issues but delving into their
+possible implications and existing solutions to build more reliable language
+models tailored to code intelligence. Based on a well-defined systematic
+research approach, we conducted an extensive literature review to uncover the
+pitfalls inherent in LM4Code. Finally, 67 primary studies from top-tier venues
+have been identified. After carefully examining these studies, we designed a
+taxonomy of pitfalls in LM4Code research and conducted a systematic study to
+summarize the issues, implications, current solutions, and challenges of
+different pitfalls for LM4Code systems. We developed a comprehensive
+classification scheme that dissects pitfalls across four crucial aspects: data
+collection and labeling, system design and learning, performance evaluation,
+and deployment and maintenance. Through this study, we aim to provide a roadmap
+for researchers and practitioners, facilitating their understanding and
+utilization of LM4Code in reliable and trustworthy ways.",http://arxiv.org/abs/2310.17903v1
+Towards Understanding the Capability of Large Language Models on Code Clone Detection: A Survey,"code clone detection, chain-of-thought prompting, code embeddings, cross-language analysis, large language models",2023-08,"This paper conducts a comprehensive evaluation of the capability of large language models (LLMs) for code clone detection across different clone types, languages, and prompting strategies. It finds that LLMs excel at detecting complex semantic clones and that chain-of-thought prompting can significantly improve their performance.",1. Introduction 2. Background 2.1 Code Clone Detection 2.2 Large Language Models 2.3 Chain-of-Thought Reasoning 3. Experimental Setup 3.1 Research Questions 4. Results 5. Future Work 6. Conclusion,"['Evaluated LLMs like GPT-3, GPT-4, LLaMA, Alpaca on code clone detection using different prompting strategies', 'Used simple prompts asking for direct yes/no answer', 'Employed one-step chain-of-thought prompts asking for analysis from different perspectives (clone type, similarity, reasoning, etc.)', 'Used multi-step chain-of-thought with separate explanations for each code snippet', 'Compared performance using code embeddings from CodeBERT and text encoders', 'Analyzed performance variation across programming languages like Python, Java, C++, etc.']","For the one-step chain-of-thought 'Integrated' prompt, the LLM was asked: 'Please analyze the following two code snippets to assess their similarity and determine if they are code clones. Provide a similarity score between 0 and 10, where a higher score indicates more similarity. Additionally, identify the type of code clone they represent and present a detailed reasoning process for detecting code clones.' This allowed the LLM to consider multiple perspectives before giving its final clone detection output.","Code cloning, the duplication of code fragments, is common in software
+development. While some reuse aids productivity, excessive cloning hurts
+maintainability and introduces bugs. Hence, automatic code clone detection is
+vital. Meanwhile, large language models (LLMs) possess diverse code-related
+knowledge, making them versatile for various software engineering challenges.
+However, LLMs' performance in code clone detection is unclear and needs more
+study for accurate assessment. In this paper, we provide the first
+comprehensive evaluation of LLMs for clone detection, covering different clone
+types, languages, and prompts. We find advanced LLMs excel in detecting complex
+semantic clones, surpassing existing methods. Adding intermediate reasoning
+steps via chain-of-thought prompts noticeably enhances performance.
+Additionally, representing code as vector embeddings, especially with text
+encoders, effectively aids clone detection.Lastly, the ability of LLMs to
+detect code clones differs among various programming languages. Our study
+suggests that LLMs have potential for clone detection due to their language
+capabilities, offering insights for developing robust LLM-based methods to
+enhance software engineering.",http://arxiv.org/abs/2308.01191v3
+A Survey on Pretrained Language Models for Neural Code Intelligence,"code summarization, program synthesis, defect detection, data flow graphs, abstract syntax trees",2022-12,"This paper provides a comprehensive survey of neural code intelligence (NCI), covering pretrained language models for understanding and generating source code. It reviews techniques for preprocessing code, neural architectures like Transformers, and pretraining objectives tailored for programming languages.",1. Introduction 2. Pretraining Language Models for Code 2.1 Preprocessing 2.1.1 Tokenization of Source Code 2.1.2 Extracting Structures from Source Code 2.2 Neural Modeling for Code Tokens 2.2.1 Transformers in NCI Models 2.2.2 Exploiting Program Structures 2.3 Training 2.3.1 Language Model Pretraining 2.3.2 Other Training Paradigms,"['- Tokenization strategies: BPE, SentencePiece, PL-specific tokens, compiler tokenizers, naming conventions', '- Extracting code structures: Abstract Syntax Trees (ASTs), Control Flow Graphs (CFGs), Data Flow Graphs (DFGs)', '- Neural architectures: Transformers (encoder-only, encoder-decoder, decoder-only)', '- Incorporating structures: Syntax-based self-attention, semantic-based self-attention', '- Pretraining objectives: Masked LM, Replaced Token Detection, Contrastive Learning']","The paper describes how Guo et al. (2021) incorporate data flow graphs into the Transformer's self-attention. They input the data flow graph sequence along with the code, and mask the attention based on the graph edges and correspondence between identifiers and graph nodes.","As the complexity of modern software continues to escalate, software
+engineering has become an increasingly daunting and error-prone endeavor. In
+recent years, the field of Neural Code Intelligence (NCI) has emerged as a
+promising solution, leveraging the power of deep learning techniques to tackle
+analytical tasks on source code with the goal of improving programming
+efficiency and minimizing human errors within the software industry. Pretrained
+language models have become a dominant force in NCI research, consistently
+delivering state-of-the-art results across a wide range of tasks, including
+code summarization, generation, and translation. In this paper, we present a
+comprehensive survey of the NCI domain, including a thorough review of
+pretraining techniques, tasks, datasets, and model architectures. We hope this
+paper will serve as a bridge between the natural language and programming
+language communities, offering insights for future research in this rapidly
+evolving field.",http://arxiv.org/abs/2212.10079v1
